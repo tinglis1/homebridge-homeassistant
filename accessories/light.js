@@ -70,6 +70,9 @@ HomeAssistantLight.prototype = {
       }
     }.bind(this))
   },
+  setHue: function(callback){
+    this.log("setting hue for: " + this.name);
+  },
   getHue: function(callback){
     this.log("fetching hue for: " + this.name);
 
