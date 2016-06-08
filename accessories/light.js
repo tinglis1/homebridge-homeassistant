@@ -14,10 +14,16 @@ function HomeAssistantLight(log, data, client) {
   this.domain = "light"
   this.data = data
   this.entity_id = data.entity_id
+  this.supports_color = false
+
   if (data.attributes && data.attributes.friendly_name) {
     this.name = data.attributes.friendly_name
   }else{
     this.name = data.entity_id.split('.').pop().replace(/_/g, ' ')
+  }
+
+  if (data.attributes && data.attributes.rgb_color) {
+    this.supports_color = true
   }
 
   this.client = client
