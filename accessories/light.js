@@ -136,6 +136,13 @@ HomeAssistantLight.prototype = {
       .on('get', this.getBrightness.bind(this))
       .on('set', this.setBrightness.bind(this));
 
+    if (this.supports_color) {
+      lightbulbService
+        .addCharacteristic(Characteristic.Hue)
+        .on('get', this.getHue.bind(this))
+        .on('set', this.setHue.bind(this));
+    }
+
     return [informationService, lightbulbService];
   }
 
