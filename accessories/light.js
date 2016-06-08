@@ -70,6 +70,18 @@ HomeAssistantLight.prototype = {
       }
     }.bind(this))
   },
+  getHue: function(callback){
+    this.log("fetching hue for: " + this.name);
+
+    this.client.fetchState(this.entity_id, function(data){
+      if (data && data.attributes) {
+        hue = data.attributes.rgb_color
+        callback(null, hue)
+      }else{
+        callback(communicationError)
+      }
+    }.bind(this))
+  },
   setPowerState: function(powerOn, callback) {
     var that = this;
     var service_data = {}
