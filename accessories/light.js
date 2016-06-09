@@ -22,7 +22,7 @@ function HomeAssistantLight(log, data, client) {
     this.name = data.entity_id.split('.').pop().replace(/_/g, ' ')
   }
 
-  if (data.attributes && data.attributes.rgb_color) {
+  if (data.attributes && data.attributes.xy_color) {
     this.supports_color = true
   }
 
