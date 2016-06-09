@@ -75,7 +75,7 @@ HomeAssistantLight.prototype = {
 
     this.client.fetchState(this.entity_id, function(data){
       if (data && data.attributes) {
-        hue = data.attributes.rgb_color
+        hue = 0
         callback(null, hue)
       }else{
         callback(communicationError)
