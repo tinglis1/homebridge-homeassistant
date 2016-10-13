@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/home-assistant/homebridge-homeassistant.git"
+    "url": "git://github.com/tinglis1/homebridge-homeassistant.git"
   },
   "bugs": {
     "url": "http://github.com/home-assistant/homebridge-homeassistant/issues"
